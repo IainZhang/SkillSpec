@@ -41,7 +41,7 @@ The implementation supports **Python, JavaScript, TypeScript, and Shell**, and u
 ```bash
 git clone https://github.com/IainZhang/SkillSpec.git
 cd SkillSpec
-uv sync --locked --extra telemetry
+uv sync --locked
 ```
 
 Run the commands below from the repository root. Inspect the CLI with:
@@ -63,16 +63,13 @@ The image includes Python and JavaScript/TypeScript toolchains and a pinned Open
 
 ### Set up Phoenix tracing
 
-Phoenix tracing is required for the setup described here. Install the telemetry dependencies and start the local service before running an analysis:
+Start Phoenix before running an analysis:
 
 ```bash
-uv sync --locked --extra telemetry
 make env
 ```
 
-The Phoenix UI is available at [localhost:6006](http://localhost:6006). The bundled service uses `admin@localhost` / `admin` for the initial sign-in and requests a password change. The supplied configuration includes a matching local tracing token.
-
-Keep `telemetry.enabled: true` and use the endpoint and matching tracing token shown in the configuration below to export traces. To stop the tracing service:
+Open [localhost:6006](http://localhost:6006) and sign in with `admin@localhost` / `admin`; change the password when prompted. The YAML example below includes the tracing settings. Stop the service with:
 
 ```bash
 make down

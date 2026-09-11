@@ -22,10 +22,7 @@ dependencies = [
     "graphviz>=0.21",
     # Verification sandbox driver: Harbor's Python API in-process (one warm container per skill)
     "harbor>=0.21,<0.22",
-]
-
-[project.optional-dependencies]
-telemetry = [
+    # Phoenix tracing
     "arize-phoenix>=19",
     "openinference-instrumentation-openai>=0.1.53",
 ]
