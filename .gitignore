@@ -1,0 +1,28 @@
+# Stage artifacts (jsonl outputs) — regenerable, not committed
+artifacts*/
+audit/
+.claude/
+.codex/
+tmp/
+
+# Local skill repos under analysis — input data, not committed
+# skillrepos/
+
+# Local Phoenix trace store (SQLite + working files) — regenerable, not committed
+.phoenix/
+.claude/
+*.log
+*.DS_Store
+dataset/
+dataset_meta/
+dataset_result/
+*output/
+
+
+# Python / uv
+.venv/
+__pycache__/
+*.pyc
+.python-version
+uv.lock
+*cache

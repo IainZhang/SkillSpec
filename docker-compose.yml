@@ -1,0 +1,32 @@
+services:
+  phoenix:
+    image: arizephoenix/phoenix:17.1.0
+    depends_on:
+      - db
+    ports:
+      - "6006:6006"   # UI + OTLP HTTP collector (/v1/traces)
+      - "4317:4317"   # OTLP gRPC collector
+    environment:
+      - PHOENIX_HOST=0.0.0.0
+      - PHOENIX_SQL_DATABASE_URL=postgresql://postgres:postgres@db:5432/postgres
+      # Web UI auth: sign in at http://localhost:6006 with admin@localhost / "admin",
+      # then set your own password on first login. PHOENIX_SECRET only signs the
+      # session token (needs >=32 chars incl. a digit + lowercase) — not the password.
+      - PHOENIX_ENABLE_AUTH=true
+      - PHOENIX_SECRET=PSvyGeX3AzWJuuMyNfREKUzVvaCTxb3t
+      # Bearer token the backend uses to push traces while auth is on. Must be >=32 chars
+      # (incl. a digit + lowercase), DIFFERENT from PHOENIX_SECRET, and match
+      # tracing.admin_secret in config.yaml / config_qwen.yaml.
+      - PHOENIX_ADMIN_SECRET=Skadm9zQ4wRtVx2yLpN7bGmC3dHfJ8kU
+  db:
+    image: postgres:17-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    volumes:
+      - database_data:/var/lib/postgresql/data
+volumes:
+  database_data:
+    driver: local

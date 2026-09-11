@@ -1,0 +1,32 @@
+llm:
+  model: openai/gpt-5.6-luna
+  url: https://openrouter.ai/api/v1
+  key_from_env: OPENROUTER_API_KEY
+  reasoning_effort: high
+  concurrency: 15
+  max_retries: 3
+  timeout: 600.0
+  min_request_interval: 0.1
+
+spec:
+  enable: true
+  fact_views: [self, neighbors, lineage, holistic]
+
+verify:
+  enable: true
+  sandbox:
+    image: skillspec-sandbox:latest
+    model: openrouter/x-ai/grok-4.6 # opencode provider/model
+    key_from_env: OPENROUTER_API_KEY  # env var opencode reads for deepseek (models.dev: env = ["DEEPSEEK_API_KEY"])
+    timeout: 600.0                  # per-batch agent.run wall-clock
+
+output:
+  dir: ./dataset_result/luna
+  log_level: info
+  
+telemetry:
+  project: luna
+
+  enabled: true
+  endpoint: http://localhost:6006/v1/traces
+  api_key: Skadm9zQ4wRtVx2yLpN7bGmC3dHfJ8kU

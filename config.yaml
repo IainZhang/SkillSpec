@@ -1,0 +1,31 @@
+llm:
+  model: deepseek-flash
+  url: https://api.deepseek.com
+  key_from_env: DEEPSEEK_API_KEY
+  reasoning_effort: high
+  concurrency: 20            # for single test
+  max_retries: 3
+  timeout: 600.0
+  min_request_interval: 0.1   # for single test
+
+spec:
+  enable: true
+  fact_views: [self, neighbors, lineage, holistic]
+
+verify:
+  enable: true
+  sandbox:
+    image: skillspec-sandbox:latest
+    model: deepseek/deepseek-flash # opencode provider/model
+    key_from_env: DEEPSEEK_API_KEY  # env var opencode reads for deepseek (models.dev: env = ["DEEPSEEK_API_KEY"])
+    timeout: 600.0                  # per-batch agent.run wall-clock
+
+output:
+  dir: ./dataset_result/
+  log_level: info
+  
+telemetry:
+  project: ds
+  enabled: true
+  endpoint: http://localhost:6006/v1/traces
+  api_key: Skadm9zQ4wRtVx2yLpN7bGmC3dHfJ8kU
