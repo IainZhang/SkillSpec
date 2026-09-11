@@ -1,16 +1,14 @@
-# SkillSpec
+# SkillSpec 
 
 **Intent-Masked Specification Reasoning for Agent Skill Correctness**
 
 SkillSpec formulates agent skill correctness as a Hoare-style specification reasoning problem. It checks whether a skill's encoded behavior fulfills its declared intent in reachable, in-scope scenarios, considering generalization across its intended tasks.
 
-This repository contains the source code accompanying the paper:
-
-> **SkillSpec: Intent-Masked Specification Reasoning for Agent Skill Correctness**  
-> Yizhuo Zhang, Bo Kang, Yi Yang, Zhiyu Duan, Zhouteng Ye, and Shunkun Yang  
-> arXiv preprint, 2026. [Paper](https://arxiv.org/abs/2609.06052) · [HTML](https://arxiv.org/html/2609.06052v1)
-
-
+<p align="center">
+  📄 <a href="https://arxiv.org/abs/2609.06052"><strong>Paper</strong></a>
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+  🌐 <a href="https://arxiv.org/html/2609.06052v1"><strong>HTML</strong></a>
+</p>
 
 ## Method Overview
 
