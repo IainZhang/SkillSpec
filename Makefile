@@ -1,8 +1,10 @@
-.PHONY: env down run resume status test image net
+.PHONY: env down run resume status test image net web
 
 # Override with make run CONFIG=conf/qwen.yaml REPO=path/to/skill.
 CONFIG ?= config.yaml
 REPO ?= ./skillrepos
+NPM ?= npm
+PORT ?= 8000
 
 env: net ## Start the local Phoenix tracing service.
 	docker compose up -d
@@ -28,3 +30,13 @@ status: ## Read saved state without running analysis.
 
 test: ## Run the test suite.
 	uv run pytest -q
+
+web-build:
+	$(NPM) --prefix web run build
+
+web:
+	$(NPM) --prefix web run dev -- --port $(PORT)
+
+web-check:
+	$(NPM) --prefix web run check
+	$(NPM) --prefix web test

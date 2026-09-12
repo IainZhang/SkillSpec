@@ -13,11 +13,8 @@ tmp/
 .claude/
 *.log
 *.DS_Store
-dataset/
-dataset_meta/
-dataset_result/
+dataset*/
 *output/
-
 
 # Python / uv
 .venv/

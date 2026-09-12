@@ -157,13 +157,13 @@ If you use SkillSpec in your research, please cite:
 
 ```bibtex
 @misc{zhang2026skillspec,
-  title         = {SkillSpec: Intent-Masked Specification Reasoning for Agent Skill Correctness},
-  author        = {Yizhuo Zhang, Bo Kang, Yi Yang, Zhiyu Duan, Zhouteng Ye and Shunkun Yang},
-  year          = {2026},
-  eprint        = {2609.06052},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.SE},
-  url           = {https://arxiv.org/abs/2609.06052}
+      title={SkillSpec: Intent-Masked Specification Reasoning for Agent Skill Correctness},
+      author={Yizhuo Zhang and Bo Kang and Yi Yang and Zhiyu Duan and Zhouteng Ye and Shunkun Yang},
+      year={2026},
+      eprint={2609.06052},
+      archivePrefix={arXiv},
+      primaryClass={cs.SE},
+      url={https://arxiv.org/abs/2609.06052},
 }
 ```
 
