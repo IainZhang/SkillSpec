@@ -8,6 +8,8 @@ SkillSpec formulates agent skill correctness as a Hoare-style specification reas
   📄 <a href="https://arxiv.org/abs/2609.06052"><strong>Paper</strong></a>
   &nbsp;&nbsp;|&nbsp;&nbsp;
   🌐 <a href="https://arxiv.org/html/2609.06052v1"><strong>HTML</strong></a>
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+  🤗 <a href="https://huggingface.co/datasets/iainzhang/SkillSpec"><strong>Dataset</strong></a>
 </p>
 
 ## Method Overview
